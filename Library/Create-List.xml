@@ -16,7 +16,7 @@ log.info ("Creating a new list [${listName}]...")</script>
   <con:testStep type="restrequest" name="Create List" id="df38f90c-9867-4c8f-8bee-6dee6bb91992">
     <con:settings/>
     <con:config service="https://api.trello.com" resourcePath="/lists/" methodName="Create" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="Create Board" id="427ecf53-fff9-47d0-948c-3c4faa2f09d7" mediaType="application/json" postQueryString="false">
+      <con:restRequest name="Create List" id="427ecf53-fff9-47d0-948c-3c4faa2f09d7" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
@@ -41,6 +41,7 @@ log.info ("Creating a new list [${listName}]...")</script>
         </con:parameters>
         <con:parameterOrder>
           <con:entry>name</con:entry>
+          <con:entry>idBoard</con:entry>
           <con:entry>key</con:entry>
           <con:entry>token</con:entry>
         </con:parameterOrder>
@@ -50,17 +51,6 @@ log.info ("Creating a new list [${listName}]...")</script>
   <con:testStep type="transfer" name="Transfer List Id" id="c31e45fc-6cb9-49f1-b526-03f852637acc">
     <con:settings/>
     <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
-        <con:name>board_id</con:name>
-        <con:sourceType>Response</con:sourceType>
-        <con:sourceStep>Create List</con:sourceStep>
-        <con:sourcePath>$.['id']</con:sourcePath>
-        <con:targetType>boardId</con:targetType>
-        <con:targetStep>#TestCase#</con:targetStep>
-        <con:targetPath/>
-        <con:type>JSONPATH</con:type>
-        <con:upgraded>true</con:upgraded>
-      </con:transfers>
       <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
         <con:name>list_id</con:name>
         <con:sourceType>Response</con:sourceType>
@@ -75,7 +65,7 @@ log.info ("Creating a new list [${listName}]...")</script>
   <con:testStep type="restrequest" name="Check List Created" id="5398ab56-cc20-405e-812a-bf04587e50e1">
     <con:settings/>
     <con:config service="https://api.trello.com" resourcePath="/boards/{boardId}" methodName="Get" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="Check Board Created" id="03c24a14-41a2-4eae-9369-c9a7a14f011a" mediaType="application/json">
+      <con:restRequest name="Check List Created" id="03c24a14-41a2-4eae-9369-c9a7a14f011a" mediaType="application/json">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>

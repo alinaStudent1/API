@@ -56,6 +56,7 @@
       </con:settings>
       <con:endpoint>${#Project#serviceUrl}</con:endpoint>
       <con:request/>
+      <con:originalUri>https://api.trello.com/1/lists/</con:originalUri>
       <con:credentials>
         <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
         <con:authType>No Authorization</con:authType>
@@ -69,9 +70,9 @@
       </con:parameters>
       <con:parameterOrder>
         <con:entry>name</con:entry>
+        <con:entry>idBoard</con:entry>
         <con:entry>key</con:entry>
         <con:entry>token</con:entry>
-        <con:entry>idBoard</con:entry>
       </con:parameterOrder>
     </con:request>
   </con:method>

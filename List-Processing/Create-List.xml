@@ -46,7 +46,7 @@
   <con:testStep type="restrequest" name="Create List" id="ec99a634-1145-4506-b6a5-c54d0d5a1bd4">
     <con:settings/>
     <con:config service="https://api.trello.com" resourcePath="/lists/" methodName="Create" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="Create Board" id="427ecf53-fff9-47d0-948c-3c4faa2f09d7" mediaType="application/json" postQueryString="false">
+      <con:restRequest name="Create List" id="427ecf53-fff9-47d0-948c-3c4faa2f09d7" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
@@ -99,7 +99,7 @@
   <con:testStep type="restrequest" name="Check List Created" id="78a0ebc0-b22c-4366-bd3b-95e34c2d5018">
     <con:settings/>
     <con:config service="https://api.trello.com" resourcePath="/lists/{listId}" methodName="Get" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="Check Board Created" id="03c24a14-41a2-4eae-9369-c9a7a14f011a" mediaType="application/json">
+      <con:restRequest name="Check List Created" id="03c24a14-41a2-4eae-9369-c9a7a14f011a" mediaType="application/json">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
