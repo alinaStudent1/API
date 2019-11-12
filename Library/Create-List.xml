@@ -60,6 +60,14 @@ log.info ("Creating a new list [${listName}]...")</script>
         <con:type>XPATH</con:type>
         <con:upgraded>true</con:upgraded>
       </con:transfers>
+      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+        <con:name>board_id</con:name>
+        <con:sourceType>Response</con:sourceType>
+        <con:sourceStep>Create List</con:sourceStep>
+        <con:targetType>boardId</con:targetType>
+        <con:targetStep>#TestCase#</con:targetStep>
+        <con:upgraded>true</con:upgraded>
+      </con:transfers>
     </con:config>
   </con:testStep>
   <con:testStep type="restrequest" name="Check List Created" id="5398ab56-cc20-405e-812a-bf04587e50e1">

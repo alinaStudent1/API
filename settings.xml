@@ -6,7 +6,7 @@
   </con:settings>
   <con:vcsConfiguration>
     <con:vcsName>Git</con:vcsName>
-    <con:repositoryIdentifier>https://github.com/alinaStudent1/ReadyAPIWORK.git</con:repositoryIdentifier>
+    <con:repositoryIdentifier>https://github.com/alinaStudent1/API.git</con:repositoryIdentifier>
   </con:vcsConfiguration>
   <con:savedRecentRuns>1</con:savedRecentRuns>
   <con:requirements/>

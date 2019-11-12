@@ -12,6 +12,10 @@
 log.info ("Creating a new board [${boardName}]...")</script>
     </con:config>
   </con:testStep>
+  <con:testStep type="transfer" name="Property Transfer boardname" id="895c6b52-00a3-470d-971b-585cdafe4ff2">
+    <con:settings/>
+    <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+  </con:testStep>
   <con:testStep type="restrequest" name="Create Board" id="42c5d137-e895-4fc7-9d87-532b7c335603">
     <con:settings/>
     <con:config service="https://api.trello.com" resourcePath="/boards/" methodName="Create" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -118,8 +122,13 @@ log.info ("Creating a new board [${boardName}]...")</script>
     </con:property>
     <con:property>
       <con:name>boardId</con:name>
-      <con:value>5dca4511871ab3751a648e39</con:value>
+      <con:value>5dca74383b12bc6c4fcfa4f6</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>895c6b52-00a3-470d-971b-585cdafe4ff2</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
 </con:testCase>
