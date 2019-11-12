@@ -13,7 +13,31 @@
           <con:name>listId</con:name>
           <con:value>5dca6b17e0c37b3df3ae379f</con:value>
         </con:property>
+        <con:property>
+          <con:name>boardId</con:name>
+          <con:value/>
+        </con:property>
       </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="calltestcase" name="Run TestCase" id="95586bd4-ebb8-4939-b83b-46d17cdc164b">
+    <con:settings/>
+    <con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:targetTestCase>8de7e245-dc7f-4dfe-9b90-14eef467345a</con:targetTestCase>
+      <con:properties>
+        <con:property>
+          <con:name>boardName</con:name>
+          <con:value>test</con:value>
+        </con:property>
+        <con:property>
+          <con:name>boardId</con:name>
+          <con:value>5dca810d5ce71e303fc8d947</con:value>
+        </con:property>
+      </con:properties>
+      <con:returnProperties>
+        <con:entry>boardId</con:entry>
+      </con:returnProperties>
+      <con:runMode>PARALLELL</con:runMode>
     </con:config>
   </con:testStep>
   <con:testStep type="datagen" name="DataGen" id="43369e04-67a7-4aa5-a09e-7b9dc73d6c2f">
@@ -94,6 +118,16 @@
         <con:type>JSONPATH</con:type>
         <con:upgraded>true</con:upgraded>
       </con:transfers>
+      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+        <con:name>boardid</con:name>
+        <con:sourceType>Response</con:sourceType>
+        <con:sourceStep>Create List</con:sourceStep>
+        <con:sourcePath>$['idBoard']</con:sourcePath>
+        <con:targetType>boardId</con:targetType>
+        <con:targetStep>Properties</con:targetStep>
+        <con:type>XPATH</con:type>
+        <con:upgraded>true</con:upgraded>
+      </con:transfers>
     </con:config>
   </con:testStep>
   <con:testStep type="restrequest" name="Check List Created" id="78a0ebc0-b22c-4366-bd3b-95e34c2d5018">
@@ -159,6 +193,11 @@ testCase.run(null, false)</con:tearDownScript>
   </con:breakPoints>
   <con:breakPoints>
     <con:testStepId>7a776590-3e5a-4662-b31b-7e9d0525545f</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>95586bd4-ebb8-4939-b83b-46d17cdc164b</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
