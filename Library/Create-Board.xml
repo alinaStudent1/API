@@ -14,7 +14,18 @@ log.info ("Creating a new board [${boardName}]...")</script>
   </con:testStep>
   <con:testStep type="transfer" name="Property Transfer boardname" id="895c6b52-00a3-470d-971b-585cdafe4ff2">
     <con:settings/>
-    <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+    <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+        <con:name>boardname</con:name>
+        <con:sourceType>boardname</con:sourceType>
+        <con:sourceStep>#Project#</con:sourceStep>
+        <con:sourcePath/>
+        <con:targetType>boardName</con:targetType>
+        <con:targetStep>#TestCase#</con:targetStep>
+        <con:targetPath/>
+        <con:upgraded>true</con:upgraded>
+      </con:transfers>
+    </con:config>
   </con:testStep>
   <con:testStep type="restrequest" name="Create Board" id="42c5d137-e895-4fc7-9d87-532b7c335603">
     <con:settings/>
@@ -118,7 +129,7 @@ log.info ("Creating a new board [${boardName}]...")</script>
   <con:properties>
     <con:property>
       <con:name>boardName</con:name>
-      <con:value>test</con:value>
+      <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
     </con:property>
     <con:property>
       <con:name>boardId</con:name>

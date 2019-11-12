@@ -63,13 +63,28 @@
         </con:property>
         <con:property>
           <con:name>boardId</con:name>
-          <con:value>5c8692d1dddde041c36786ed</con:value>
+          <con:value>5dca74383b12bc6c4fcfa4f6</con:value>
         </con:property>
       </con:properties>
       <con:returnProperties>
         <con:entry>boardId</con:entry>
       </con:returnProperties>
       <con:runMode>PARALLELL</con:runMode>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="transfer" name="board name to projProp" id="a16d5c72-ed3d-4e2e-8451-684debb2f74a">
+    <con:settings/>
+    <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+        <con:name>board name</con:name>
+        <con:sourceType>boardName</con:sourceType>
+        <con:sourceStep>Create Board</con:sourceStep>
+        <con:sourcePath/>
+        <con:targetType>boardname</con:targetType>
+        <con:targetStep>#Project#</con:targetStep>
+        <con:targetPath/>
+        <con:upgraded>true</con:upgraded>
+      </con:transfers>
     </con:config>
   </con:testStep>
   <con:testStep type="transfer" name="Transfer Board Id" id="a1371325-54b7-4b52-bc5a-1f162598a8e1">
@@ -196,6 +211,11 @@ testCase.run(null, false)</con:tearDownScript>
   </con:breakPoints>
   <con:breakPoints>
     <con:testStepId>6fb708e4-418f-4539-a99b-d3d39e27119c</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>a16d5c72-ed3d-4e2e-8451-684debb2f74a</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>

@@ -23,6 +23,9 @@
       <con:name>token</con:name>
       <con:value>aa091ec4d5dfa6f6f01df11a1a2d4f2c4fbf504b8e395b067b38a2690f1d908e</con:value>
     </con:property>
+    <con:property>
+      <con:name>boardname</con:name>
+    </con:property>
   </con:properties>
   <con:wssContainer/>
   <con:databaseConnectionContainer/>
