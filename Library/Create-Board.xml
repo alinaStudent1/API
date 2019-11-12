@@ -129,11 +129,11 @@ log.info ("Creating a new board [${boardName}]...")</script>
   <con:properties>
     <con:property>
       <con:name>boardName</con:name>
-      <con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">board_8405</con:value>
     </con:property>
     <con:property>
       <con:name>boardId</con:name>
-      <con:value>5dca74383b12bc6c4fcfa4f6</con:value>
+      <con:value>5dca9a079796bf0c51d41f7a</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

@@ -27,11 +27,11 @@
       <con:properties>
         <con:property>
           <con:name>boardName</con:name>
-          <con:value>test</con:value>
+          <con:value/>
         </con:property>
         <con:property>
           <con:name>boardId</con:name>
-          <con:value>5dca810d5ce71e303fc8d947</con:value>
+          <con:value>5dca9b2944d16e027ca75d93</con:value>
         </con:property>
       </con:properties>
       <con:returnProperties>
@@ -89,7 +89,7 @@
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <con:entry key="idBoard" value="5dc84bafc1c592810770dd54"/>
+          <con:entry key="idBoard" value="${#[Library]#boardid}"/>
           <con:entry key="name" value="${DataGen#listName }"/>
           <con:entry key="boardId" value="5dc84bafc1c592810770dd54"/>
           <con:entry key="key" value="${#Project#key}"/>

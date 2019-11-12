@@ -63,8 +63,8 @@
       </con:credentials>
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
       <con:parameters>
-        <con:entry key="idBoard" value="5dc84bafc1c592810770dd54"/>
-        <con:entry key="name" value=""/>
+        <con:entry key="idBoard" value="${#[Library]#boardid}"/>
+        <con:entry key="name" value="${DataGen#listName }"/>
         <con:entry key="key" value="${#Project#key}"/>
         <con:entry key="token" value="${#Project#token}"/>
       </con:parameters>

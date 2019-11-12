@@ -25,6 +25,7 @@
     </con:property>
     <con:property>
       <con:name>boardname</con:name>
+      <con:value>board_8405</con:value>
     </con:property>
   </con:properties>
   <con:wssContainer/>
