@@ -12,7 +12,7 @@
       <con:properties>
         <con:property>
           <con:name>boardId</con:name>
-          <con:value>5c8692d3fb84bf822037b85f</con:value>
+          <con:value>5dca452b911c0040deaf9b4a</con:value>
         </con:property>
       </con:properties>
     </con:config>
@@ -51,11 +51,11 @@
       <con:properties>
         <con:property>
           <con:name>boardName</con:name>
-          <con:value>${DataGen#boardName}</con:value>
+          <con:value>${DataGen#listName }</con:value>
         </con:property>
         <con:property>
           <con:name>boardId</con:name>
-          <con:value>5c8692d3fb84bf822037b85f</con:value>
+          <con:value>5dca452b911c0040deaf9b4a</con:value>
         </con:property>
       </con:properties>
       <con:returnProperties>

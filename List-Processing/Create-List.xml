@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="4d31b8d3-8f62-46f5-a423-d50577e7a3c9" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TC_1 - Create Board" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="2022bff1-a184-4750-9778-18cef3044b50" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Create List" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="4d31b8d3-8f62-46f5-a423-d50577e7a3c9fileName">Create-Board</con:setting>
+    <con:setting id="2022bff1-a184-4750-9778-18cef3044b50fileName">Create-List</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="properties" name="Properties" id="e150f5db-e427-47d7-9c90-f202dc1b7b98">
+  <con:testStep type="properties" name="Properties" id="c00c6174-ae7a-40f2-b2ce-cdf4fc6f7f6f">
     <con:settings/>
     <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:properties>
         <con:property>
-          <con:name>boardId</con:name>
-          <con:value>5dca449c0097da14c3702a01</con:value>
+          <con:name>listId</con:name>
+          <con:value>5dca6b17e0c37b3df3ae379f</con:value>
         </con:property>
       </con:properties>
     </con:config>
   </con:testStep>
-  <con:testStep type="datagen" name="DataGen" id="64cac569-fa5e-49b5-b348-6965227170f4">
+  <con:testStep type="datagen" name="DataGen" id="43369e04-67a7-4aa5-a09e-7b9dc73d6c2f">
     <con:settings/>
     <con:config xsi:type="con:DataGeneratorStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:property type="Number">
@@ -33,18 +34,18 @@
       </con:property>
       <con:property type="Template">
         <con:configuration>
-          <template>board_${rand}</template>
+          <template>list_${rand}</template>
           <entitize>false</entitize>
         </con:configuration>
-        <con:name>boardName</con:name>
+        <con:name>listName</con:name>
         <con:mode>STEP</con:mode>
         <con:shared>false</con:shared>
       </con:property>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Create Board" id="7ad5051a-e00a-4c5a-9fe6-0abe158ae1cc">
+  <con:testStep type="restrequest" name="Create List" id="ec99a634-1145-4506-b6a5-c54d0d5a1bd4">
     <con:settings/>
-    <con:config service="https://api.trello.com" resourcePath="/boards/" methodName="Create" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config service="https://api.trello.com" resourcePath="/lists/" methodName="Create" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Create Board" id="427ecf53-fff9-47d0-948c-3c4faa2f09d7" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
@@ -64,27 +65,30 @@
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <con:entry key="name" value="${DataGen#boardName}"/>
+          <con:entry key="idBoard" value="5dc84bafc1c592810770dd54"/>
+          <con:entry key="name" value="${DataGen#listName }"/>
+          <con:entry key="boardId" value="5dc84bafc1c592810770dd54"/>
           <con:entry key="key" value="${#Project#key}"/>
           <con:entry key="token" value="${#Project#token}"/>
         </con:parameters>
         <con:parameterOrder>
           <con:entry>name</con:entry>
+          <con:entry>idBoard</con:entry>
           <con:entry>key</con:entry>
           <con:entry>token</con:entry>
         </con:parameterOrder>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="transfer" name="Transfer Board Id" id="7a776590-3e5a-4662-b31b-7e9d0525545f">
+  <con:testStep type="transfer" name="Transfer List Id" id="37ecb000-2073-4add-bc05-fa7784af4ed6">
     <con:settings/>
     <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
-        <con:name>board_id</con:name>
+        <con:name>list_id</con:name>
         <con:sourceType>Response</con:sourceType>
-        <con:sourceStep>Create Board</con:sourceStep>
+        <con:sourceStep>Create List</con:sourceStep>
         <con:sourcePath>$['id']</con:sourcePath>
-        <con:targetType>boardId</con:targetType>
+        <con:targetType>listId</con:targetType>
         <con:targetStep>Properties</con:targetStep>
         <con:targetPath/>
         <con:type>JSONPATH</con:type>
@@ -92,9 +96,9 @@
       </con:transfers>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Check Board Created" id="578783ae-c565-4b0e-940d-54c0475199dc">
+  <con:testStep type="restrequest" name="Check List Created" id="78a0ebc0-b22c-4366-bd3b-95e34c2d5018">
     <con:settings/>
-    <con:config service="https://api.trello.com" resourcePath="/boards/{boardId}" methodName="Get" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config service="https://api.trello.com" resourcePath="/lists/{listId}" methodName="Get" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Check Board Created" id="03c24a14-41a2-4eae-9369-c9a7a14f011a" mediaType="application/json">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
@@ -111,7 +115,7 @@
         <con:assertion type="JsonPath Match" id="965d281e-b63c-42b0-a915-42281d50058f" name="Verify Board Name">
           <con:configuration>
             <path>$['name']</path>
-            <content>${DataGen#boardName}</content>
+            <content>${DataGen#listName }</content>
             <allowWildcards>false</allowWildcards>
             <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
             <ignoreComments>false</ignoreComments>
@@ -123,7 +127,7 @@
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <con:entry key="boardId" value="${Properties#boardId}"/>
+          <con:entry key="listId" value="${Properties#listId}"/>
           <con:entry key="key" value="${#Project#key}"/>
           <con:entry key="token" value="${#Project#token}"/>
         </con:parameters>

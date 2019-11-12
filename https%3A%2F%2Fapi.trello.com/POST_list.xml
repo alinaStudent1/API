@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="POST_list" path="/boards/" id="e17589bf-8c38-4250-9ac3-f8b97178d905" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="POST_list" path="/lists/" id="e17589bf-8c38-4250-9ac3-f8b97178d905" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="5cf7ac72-f07c-435c-a2d0-2ef6117678c1fileName">POST_board</con:setting>
     <con:setting id="e17589bf-8c38-4250-9ac3-f8b97178d905fileName">POST_list</con:setting>
@@ -22,6 +22,13 @@
       <con:value>8ca39580ce58465921ed300b908437783ff1d74d92e23d38963c5e13acb98e5e</con:value>
       <con:style>QUERY</con:style>
       <con:default>8ca39580ce58465921ed300b908437783ff1d74d92e23d38963c5e13acb98e5e</con:default>
+    </con:parameter>
+    <con:parameter>
+      <con:name>idBoard</con:name>
+      <con:value/>
+      <con:style>QUERY</con:style>
+      <con:default/>
+      <con:description xsi:nil="true"/>
     </con:parameter>
   </con:parameters>
   <con:method name="Create" id="34ac11ac-7cad-4341-8aeb-c787c4fd296c" method="POST">
@@ -55,6 +62,7 @@
       </con:credentials>
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
       <con:parameters>
+        <con:entry key="idBoard" value="5dc84bafc1c592810770dd54"/>
         <con:entry key="name" value=""/>
         <con:entry key="key" value="${#Project#key}"/>
         <con:entry key="token" value="${#Project#token}"/>
@@ -63,6 +71,7 @@
         <con:entry>name</con:entry>
         <con:entry>key</con:entry>
         <con:entry>token</con:entry>
+        <con:entry>idBoard</con:entry>
       </con:parameterOrder>
     </con:request>
   </con:method>

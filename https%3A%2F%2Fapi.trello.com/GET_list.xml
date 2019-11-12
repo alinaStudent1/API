@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="GET_list" path="/boards/{boardId}" id="3e279773-1190-4dec-a3f4-f50c1f92da94" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="GET_list" path="/lists/{listId}" id="3e279773-1190-4dec-a3f4-f50c1f92da94" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="e2a08796-7d12-4352-bdf0-2a3b39b09feefileName">GET_board</con:setting>
     <con:setting id="3e279773-1190-4dec-a3f4-f50c1f92da94fileName">GET_list</con:setting>
@@ -21,12 +21,11 @@
       <con:path xsi:nil="true"/>
       <con:description xsi:nil="true"/>
     </con:parameter>
-    <con:parameter required="true">
-      <con:name>boardId</con:name>
+    <con:parameter>
+      <con:name>listId</con:name>
       <con:value/>
       <con:style>TEMPLATE</con:style>
       <con:default/>
-      <con:description xsi:nil="true"/>
     </con:parameter>
   </con:parameters>
   <con:method name="Get" id="06f6ed5d-d91b-471f-9609-e1a5a08fcccd" method="GET">
@@ -62,13 +61,14 @@
       </con:credentials>
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
       <con:parameters>
+        <con:entry key="listId" value=""/>
         <con:entry key="key" value="${#Project#key}"/>
         <con:entry key="token" value="${#Project#token}"/>
       </con:parameters>
       <con:parameterOrder>
         <con:entry>key</con:entry>
         <con:entry>token</con:entry>
-        <con:entry>boardId</con:entry>
+        <con:entry>listId</con:entry>
       </con:parameterOrder>
     </con:request>
   </con:method>
